@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastre o seu planejamento</ion-title>
+  </ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content padding>
+  <form #form='ngForm' (ngSubmit)='salvar(form)'>
+    <ion-item>
+      <ion-label position="floating">
+        Nome do Planejamento:
+      </ion-label>
+      <ion-input name="nome" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Faturamento Mensal:
+      </ion-label>
+      <ion-input name="faturamento" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  position="floating">
+        Custo Fixo Mensal
+      </ion-label>
+      <ion-input name="custo" ngModel></ion-input>
+    </ion-item>
+  </form>
+  <br>
+  <ion-button  color="tertiary" expand="block" type='submit'>Salvar</ion-button>
+</ion-content>
