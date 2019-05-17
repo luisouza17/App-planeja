@@ -8,21 +8,25 @@ import { NavController } from '@ionic/angular';
 })
 export class NovoPlanejamentoPage implements OnInit {
 
-  constructor(private nav:NavController) { }
+  constructor(private nav: NavController) { }
 
   ngOnInit() {
   }
-  salvar(form){
-   
-      const nomePlaneja = form.value.nome;
-      const nomeFatura = form.value.fatura;
-      const nomeCusto = form.value.custo;
+  salvar(form) {
 
-      console.log("");
-      
-      form.reset();
+    const planejamentoString = JSON.stringify(form.value)
 
-      this.nav.back();
+    const nomePlaneja = form.value.nome;
+    const nomeFatura = form.value.faturamento;
+    const nomeCusto = form.value.custo;
+
+    localStorage.setItem(nomePlaneja,planejamentoString);
+
+    console.log(nomePlaneja, nomeFatura, nomeCusto);
+
+    form.reset();
+
+    this.nav.back();
   }
 
 }
